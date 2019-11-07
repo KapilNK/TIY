@@ -9,6 +9,7 @@ backend-TIY/config.js
 backend-TIY/credentials
 
 backend-TIY/encryption
+backend-TIY/token.json
 
 UI/*.txt
 backend-TIY/*.txt
