@@ -1,0 +1,6 @@
+{"message":"Listening on port 5443","level":"debug"}
+{"message":"Listening on port 5443","level":"debug"}
+{"message":"Listening on port 5443","level":"debug"}
+{"status":200,"message":"result of getting all gallery data [object Object]{ img: '../../assets/images/bg_3.jpg', likes: '10k', id: '1' },{ img: '../../assets/images/bg_4.jpg', likes: '10k', id: '2' },{ img: '../../assets/images/bg_5.jpg', likes: '10k', id: '3' },{ img: '../../assets/images/bg_2.jpg', likes: '10k', id: '4' },{ img: '../../assets/images/image_7.jpg', likes: '10k', id: '5' }","level":"info"}
+{"message":"getting image for id:1","level":"info"}
+{"message":"result of getting all gallery data [object Object]","level":"info"}

@@ -1,0 +1,54 @@
+<main role="main" class="container mt-5">
+  <div class="jumbotron">
+    <div class="heading">
+      <h2>My Beautiful Journey</h2>
+    </div>
+    <div class="card-columns">
+      <div class="card transform-on-hover" *ngFor="let picture of gallaryContentList">
+        <a [routerLink]="['/image',picture.id]" href="javascript:void(0);"><img src="/assets/images/{{picture.img}}" class="card-img-top"
+            alt="..."
+            srcset="/img320/{{picture.img}} 320w,
+            /img480/{{picture.img}} 480w,
+            /img640/{{picture.img}} 640w,
+            /img1024/{{picture.img}} 1024w,
+            /img1366/{{picture.img}} 1366w,
+            /img1440/{{picture.img}} 1440w,
+            /img1680/{{picture.img}} 1680w,
+            /img1920/{{picture.img}} 1920w"
+            sizes="100vw"
+            ></a>
+        <!-- <div class="card-img-overlay ">
+          <h4 class="card-title text-center">John Doe</h4>
+          <p class="card-text text-center">Some example text.</p>
+          <a href="#" class="btn btn-primary">See Profile</a>
+        </div> -->
+        <!-- <div class="card-body">
+          <h6 class="card-title">John Doe</h6>
+          <p class="card-text">Some example text.</p>
+          <h6 class="card-title"></h6>
+        </div> -->
+        <div class="card-body text-center">
+          <h6><a href="#">Lorem Ipsum</a></h6>
+          <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
+        </div>
+        <div class="card-footer">
+          <div class="social-icons text-left">
+          <a href="#">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-instagram"></i>
+          </a>
+
+          <span class="emotions-icons float-right">{{picture.likes}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button *ngIf="limit < 100" (click)="showMoreImages()">Show More Images</button>
+        <h2 *ngIf="limit >= 100">No More Images</h2> -->
+  </div>
+</main>

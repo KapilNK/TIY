@@ -1,0 +1,24 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "logs\\.7c1db2988c82a0d779110205a267fc45bc1282e4-audit.json",
+    "files": [
+        {
+            "date": 1570567661226,
+            "name": "logs\\tiy-error-2019-10-09-02.log",
+            "hash": "b75a52f0523b2ae1090887e1668b0ff4"
+        },
+        {
+            "date": 1570570219919,
+            "name": "logs\\tiy-error-2019-10-09-03.log",
+            "hash": "f155ac8338a6b97b6e3cd0f325a66f09"
+        },
+        {
+            "date": 1571525776378,
+            "name": "logs\\tiy-error-2019-10-20-04.log",
+            "hash": "da6832ebbd76b2b0caa31add5b06516c"
+        }
+    ]
+}

@@ -5,6 +5,13 @@ const app = express();
 app.use(express.json());
 
 const fs = require('fs');
+var key = fs.readFileSync('encryption/tiy.key');
+var cert = fs.readFileSync( 'encryption/tiy.crt');
+var options = {
+  key: key,
+  cert: cert
+};
+var https = require('https');
 const readline = require('readline');
 const { google } = require('googleapis');
 
@@ -164,8 +171,11 @@ app.post('/api/contactus', (req, res) => {
 //     });
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 6443;
 //on command write 
 //set PORT=4001
 //on linux export PORT=4001
-app.listen(port, () => console.log(`Listing on port ${port}...`));
+var server = https.createServer(options,app);
+server.listen(port, () => console.log(`Listing on port ${port}...`));
+
+//app.listen(port, () => console.log(`Listing on port ${port}...`));

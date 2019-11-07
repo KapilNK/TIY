@@ -1,0 +1,26 @@
+<section>
+  <div class="container mt-9 marketing">
+    <!-- START THE FEATURETTES -->
+    <div *ngFor="let imgdetail of imgDetails;let odd=odd">
+      <div class="row featurette">
+        <div class="col-md-7" [class.order-md-2]="odd">
+          <h2 class="featurette-heading">{{imgdetail.heading}}<span class="text-muted">{{imgdetail.subHeading}}</span>
+          </h2>
+          <p class="lead">{{imgdetail.description}}</p>
+        </div>
+        <div class="col-md-5" [class.order-md-1]="odd">
+          <img class="featurette-image img-fluid img-responsive mx-auto"
+            src="/assets/images/{{imgdetail.img}}"
+            alt="Generic placeholder image"
+            srcset="/img1440/{{imgdetail.img}} 1x,
+        /img1440/{{imgdetail.img}} 1.5x,
+        /img1920/{{imgdetail.img}} 2x,
+        /img1920/{{imgdetail.img}} 3x,
+        /img1920/{{imgdetail.img}} 4x,"
+            >
+        </div>
+      </div>
+      <hr class="featurette-divider">
+    </div>
+  </div>
+</section>

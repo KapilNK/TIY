@@ -1,0 +1,54 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Traveller In You</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav flex-r ow ml-md-auto d-no ne d-md-flex">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/gallery']" href="javascript:void(0);">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" [routerLink]="['/blog']" href="javascript:void(0);"
+          id="blog-id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Blog</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="blog-id">
+            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#addpost" (click)="openModal()"><i
+                class="glyphicon glyphicon-log-out"></i>Create New</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactus']" href="#">Contact</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isAuthenticated();else showSignIn">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="login-id" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Hi, {{loggedInUser}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="login-id">
+
+            <a class="dropdown-item" href="javascript:void(0);" (click)="logout()"><i
+                class="glyphicon glyphicon-log-out"></i>Sign Out</a>
+          </div>
+        </li>
+        <ng-template #showSignIn>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/login']" href="javascript:void(0);">Sign In</a></li>
+        </ng-template>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </nav>
+</header>

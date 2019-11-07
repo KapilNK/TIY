@@ -1,0 +1,71 @@
+<div class="modal fade" id="addpost" tabindex="-1" role="dialog" aria-labelledby="addpostmodellabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addpostmodellabel">New Post</h5>
+        <button type="button" #closeBtn class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit()">
+          <div class="form-group">
+            <label for="postTitle" class="col-form-label">Title</label>
+            <input formControlName="title" type="text" class="form-control" id="postTitle"  [(ngModel)]="post.title" placeholder="Enter title">
+            <span *ngIf="isValid('title')">title is required</span>
+          </div>
+          <div class="form-group">
+            <label for="postDescription" class="col-form-label">Description</label>
+            <textarea formControlName="description" class="form-control" id="postDescription"  [(ngModel)]="post.description" placeholder="My Experience">
+                      </textarea>
+                      <span *ngIf="isValid('description')">description is required</span>
+          </div>
+          <div class="form-group">
+            <label for="uploadImage" class="col-form-label">Multiple Image Upload</label>
+            <br>
+            <input class="form-control" id="uploadImage" formControlName="document" type="file" ng2FileSelect
+              accept=".jpg" [uploader]="uploader" multiple />
+            <br>
+          </div>
+          <br>
+          <div class="drop-zone">
+            <div ng2FileDrop [uploader]="uploader">
+              Drag and drop files to upload
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th width="90%">
+                  File Name
+                </th>
+                <th width="10%">
+                  Remove
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of uploader.queue">
+                <th width="90%">
+                  {{ item.file.name}}({{item.file.size/1000000}} MB)
+                </th>
+                <th class="text-center" width="10%">
+                  <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <button class="btn btn-primary" [disabled]="!uploadForm.valid" type="submit">Upload</button>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+          </div> -->
+    </div>
+  </div>
+</div>

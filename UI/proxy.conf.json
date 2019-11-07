@@ -1,0 +1,32 @@
+{
+    "/login/authenticate": {
+      "target": "http://www.travellerinyou.com:3002",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/register/submit": {
+      "target": "http://www.travellerinyou.com:3002",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/logout/*": {
+      "target": "http://www.travellerinyou:3002",
+      "secure": false,
+      "changeOrigin": true
+    },
+	"/api/*": {
+	   "target": "http://localhost:3002",
+		"secure": false
+	},
+	"/api/gallerycontents":{
+      "target": "http://localhost:3002",
+      "secure": false,
+      "changeOrigin": true
+    },
+	"/api/addpost":{
+      "target": "http://localhost:3002",
+      "secure": false,
+      "changeOrigin": true
+    }
+    
+  }

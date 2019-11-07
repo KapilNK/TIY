@@ -1,0 +1,59 @@
+<main role="main" class="container mt-5">
+  <div class="jumbotron">
+    <div class="row block-9 mb-4 contactus-font">
+      <div class="col-md-6 pr-md-5 flex-column">
+        <div class="row d-block flex-row">
+          <h2 class="h4 mb-4">Contact Information</h2>
+          <div class="col mb-3 d-flex py-4 border" style="background: white;">
+            <div class="align-self-center">
+              <p class="mb-0"><span>Address:</span> Noida,UP</p>
+            </div>
+          </div>
+          <div class="col mb-3 d-flex py-4 border" style="background: white;">
+            <div class="align-self-center">
+              <p class="mb-0"><span>Phone:</span> <a href="tel://1234567920">+91 XXXXXXXX</a></p>
+            </div>
+          </div>
+          <div class="col mb-3 d-flex py-4 border" style="background: white;">
+            <div class="align-self-center">
+              <p class="mb-0"><span>Email:</span> <a href="mailto:travelparts1@gmail.com">travelparts1@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="col mb-3 d-flex py-4 border" style="background: white;">
+            <div class="align-self-center">
+              <p class="mb-0"><span>Website</span> <a href="#">travellerinyou.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form [formGroup]="contactusform">
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="yourname" placeholder="Your Name">
+            <span class="text-danger" *ngIf="isValid('yourname')">name is required</span>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Your Email">
+            <span class="text-danger" *ngIf="isValid('email')">email is required</span>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="subject" placeholder="Subject">
+            <span class="text-danger" *ngIf="isValid('subject')">subject is required</span>
+          </div>
+          <div class="form-group">
+            <textarea name="" id="" cols="30" rows="7" class="form-control" formControlName="message" placeholder="Message"></textarea>
+            <span class="text-danger" *ngIf="isValid('message')">message is required</span>
+          </div>
+          <div class="form-group">
+            <input type="button" value="Send Message" class="btn btn-primary py-3 px-5" (click)="sendContact()">
+          </div>
+          <div style="text-align: center;">                
+              {{successMessage}}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-12" id="map"></div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+UI/node_modules
+
+backend-TIY/node_modules
+
+UI/dist
+
+backend-TIY/config.js
+
+backend-TIY/credentials
+
+backend-TIY/encryption
+
+UI/*.txt
+backend-TIY/*.txt
+
