@@ -4,6 +4,7 @@ import { MyserviceService } from '../myservice.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from '../../environments/environment';
+// import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -77,4 +78,8 @@ export class LoginComponent implements OnInit {
   movetoforgotpassword() {
     this._router.navigate(['../forgetpass'], { relativeTo: this._activatedRoute });
   }
+
+  // close() {
+  //   this.matDialogRef.close();
+  // }
 }

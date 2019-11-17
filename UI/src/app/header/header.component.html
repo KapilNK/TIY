@@ -45,7 +45,9 @@
           </div>
         </li>
         <ng-template #showSignIn>
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/login']" href="javascript:void(0);">Sign In</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0);" (click)="openModal()">Sign In</a>
+          </li>
         </ng-template>
       </ul>
     </div>

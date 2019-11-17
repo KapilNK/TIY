@@ -1,50 +1,66 @@
 <div class="formcontainer">
-    <div class="formbody">
-        <form style="width:100%;" [formGroup]="myForm">
-            <div class="header">Register</div>
-            <div>
-                <mat-form-field style="width:100%;">
-                    <input type="text" formControlName="email" matInput placeholder="Email" id="email">
-                </mat-form-field>                
-                <span *ngIf="isValid('email')">Entered email is invalid</span>
+    <form [formGroup]="myForm">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign Up</h1>
+        <div class="row social-login">
+            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f mr-2"></i>
+                        Sign in with Facebook</span> </button>
             </div>
-            <div>
-                <mat-form-field style="width:50%;">
-                    <input type="text" formControlName="firstName" matInput placeholder="First Name" id="firstName">
-                </mat-form-field>
-                <span *ngIf="isValid('firstName')">firstName is required</span>
-
-                <mat-form-field style="width:50%;">
-                    <input type="text" formControlName="lastName" matInput placeholder="Last Name" id="lastName">
-                </mat-form-field>
-                <span *ngIf="isValid('lastName')">lastName is required</span>
-            </div>
-            <div>
-                <mat-form-field style="width:100%;">
-                    <input type="password" formControlName="password" matInput placeholder="Password" id="pass">
-                </mat-form-field>
-                <span *ngIf="isValid('password')">Password is a mandatory field</span>
-            </div>
-            <div>
-                <mat-form-field style="width:100%;">
-                    <input type="password" formControlName="cnfpass" matInput placeholder="Re-enter Password" id="cnfpass">
-                </mat-form-field>
-                <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span>
-            </div>
-            <div style="margin-top:20px;">
-                <button class="form-btn" (click)="register()">Register</button>
-            </div>
-
-
-            <div style="text-align: center;">                
-                {{successMessage}}
-            </div>
-        </form>
-    </div>
-
-    <div>
-        <div style="width: 290px; padding: 20px;">
-            <button class="form-btn-hollow" (click)="movetologin()">Login</button>
+            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google mr-2"></i> Sign in
+                        with Google</span> </button></div>
         </div>
-    </div>
+        <p style="text-align:center"> OR </p>
+        <div>
+            <mat-form-field style="width:100%;">
+                <input type="text" formControlName="email" matInput placeholder="Email" id="email"
+                    class="forms-control">
+            </mat-form-field>
+            <mat-error class="error-message">
+                <span *ngIf="isValid('email')">Entered email is invalid</span></mat-error>
+        </div>
+        <div>
+            <mat-form-field style="width:100%;">
+                <input type="text" formControlName="firstName" matInput placeholder="First Name" id="firstName"
+                    class="forms-control">
+            </mat-form-field>
+            <mat-error class="error-message">
+            <span *ngIf="isValid('firstName')">firstName is required</span></mat-error>
+
+            <mat-form-field style="width:100%;">
+                <input type="text" formControlName="lastName" matInput placeholder="Last Name" id="lastName"
+                    class="forms-control">
+            </mat-form-field>
+            <mat-error class="error-message">
+            <span *ngIf="isValid('lastName')">lastName is required</span></mat-error>
+        </div>
+        <div>
+            <mat-form-field style="width:100%;">
+                <input type="password" formControlName="password" matInput placeholder="Password" id="pass"
+                    class="forms-control">
+            </mat-form-field>
+            <mat-error class="error-message">
+            <span *ngIf="isValid('password')">Password is a mandatory field</span></mat-error>
+        </div>
+        <div>
+            <mat-form-field style="width:100%;">
+                <input type="password" formControlName="cnfpass" matInput placeholder="Re-enter Password" id="cnfpass"
+                    class="forms-control">
+            </mat-form-field>
+            <mat-error class="error-message">
+            <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span></mat-error>
+        </div>
+        <div style="margin-top:20px;">
+            <button class="btn btn-primary btn-block" (click)="register()"><i class="fas fa-user-plus"></i> Sign
+                Up</button>
+        </div>
+        <div style="text-align: center;">
+            {{successMessage}}
+        </div>
+        <hr>
+        <button class="btn btn-success btn-block mt-4 mb-3" (click)="movetologin()"><i class="fas fa-sign-in-alt"></i>
+            Sign
+            in</button>
+    </form>
+
 </div>
